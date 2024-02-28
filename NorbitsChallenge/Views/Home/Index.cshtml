@@ -1,0 +1,59 @@
+﻿@model HomeModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h2>
+    Vis biler for @Model.CompanyName
+</h2>
+
+@if (!Model.CompanyCars.Any())
+{
+    <p>Ingen biler registrert</p>
+}
+else
+{
+    <table>
+        <tr>
+            <th>Bil</th>
+            <th>Registreringsnummer</th>
+        </tr>
+        @foreach (var car in Model.CompanyCars)
+        {
+            <tr>
+                <td>@car.Brand @car.Model</td>
+                <td>
+                    <a asp-controller="Car" asp-action="Details" asp-route-companyId="@Model.CompanyId" asp-route-licencePlate="@car.LicensePlate">@car.LicensePlate</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+<br/>
+<a asp-controller="Car" asp-action="Create">
+    <button style="color:black;">Legg til bil</button>
+</a>
+
+<hr/>
+<h4>Gå til <a asp-action="Index" asp-controller="Settings">Innstillinger</a></h4>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>

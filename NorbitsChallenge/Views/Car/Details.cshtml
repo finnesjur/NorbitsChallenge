@@ -1,0 +1,16 @@
+@model NorbitsChallenge.Models.Dto.CarDto
+
+<div>
+    <h1>@Model.Brand @Model.Model</h1>
+    <li>Registreringsnummer @Model.LicensePlate</li>
+    <li>@Model.TireCount dekk på dekkhotell</li>
+    <br/>
+    <h5>Beskrivelse</h5>
+    <p>@Model.Description</p>
+</div>
+
+<br/>
+<a asp-action="Edit"  asp-route-licencePlate="@Model.LicensePlate"><button style="color:black;">Endre bil</button></a>
+<a asp-action="Delete" asp-route-licensePlate="@Model.LicensePlate"><button style="color:black;">Slett bil</button> </a>
+<br/><br/>
+<a asp-controller="Home" asp-action="Index">Tilbake</a>

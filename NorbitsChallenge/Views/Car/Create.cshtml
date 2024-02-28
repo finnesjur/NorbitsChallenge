@@ -1,0 +1,21 @@
+@using NorbitsChallenge.Models.Dto
+@model CarDto
+<div>
+    <form asp-action="Create">
+        <label for="brand">Bilmerke:</label><br>
+        <input type="text" id="brand" name="brand" value=""><br>
+        <label for="model">Modell:</label><br>
+        <input type="text" id="model" name="model" value=""><br>
+        <label for="licensePlate">Registreringsnummer:</label><br>
+        <input type="text" id="licensePlate" name="licensePlate" value=""><br>
+        <label for="tireCount">Dekk på dekkhotell:</label><br>
+        <input type="number" id="tireCount" name="tireCount" value=""><br>
+        <label for="description">Beskrivelse:</label><br>
+        <textarea type="text" id="description" name="description"></textarea>
+        <br>
+        <br>
+        <button type="submit">Lagre</button>
+    </form>
+    <br/>
+    <a asp-controller="Home" asp-action="Index">Tilbake</a>
+</div>
