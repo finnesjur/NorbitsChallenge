@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using NorbitsChallenge.Bll;
 using NorbitsChallenge.Helpers;
 using NorbitsChallenge.Models.Contracts;
 using NorbitsChallenge.Models.Db;
